@@ -1,7 +1,2 @@
 .idea
-pom.xml
 target
-src
-!src/main/java/org/example/easy
-!src/main/java/org/example/medium
-!src/main/java/org/example/hard
