@@ -86,6 +86,7 @@ class MergeTwoSortedLists_21 {
             System.out.println("______________");
             current.next = new ListNode(list1.val);
             list1 = list1.next;
+            current = current.next;
         }
 
         while (list2 != null) {
@@ -98,6 +99,7 @@ class MergeTwoSortedLists_21 {
             System.out.println("______________");
             current.next = new ListNode(list2.val);
             list2 = list2.next;
+            current = current.next;
         }
 
         System.out.println("RESULT answer:");
