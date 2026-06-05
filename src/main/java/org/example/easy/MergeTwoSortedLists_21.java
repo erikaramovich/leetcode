@@ -19,15 +19,11 @@ class MergeTwoSortedLists_21 {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(4)));
+        ListNode l1 = new ListNode(-9,
+                new ListNode(3));
 
-        ListNode l2 = new ListNode(1,
-                new ListNode(3,
-                        new ListNode(4)));
-
-        ListNode l3 = new ListNode();
+        ListNode l2 = new ListNode(5,
+                new ListNode(7));
 
         printList(mergeTwoLists(l1, l2));
 
@@ -55,15 +51,17 @@ class MergeTwoSortedLists_21 {
         ListNode current = answer;
 
 
-        System.out.println("answer addr: " + answer);
-        System.out.println("current addr: " + current);
+//        System.out.println("answer addr: " + answer);
+//        System.out.println("current addr: " + current);
 
         while (list1 != null && list2 != null) {
+            System.out.print("l1: ");
             printList(list1);
+            System.out.print("l2: ");
             printList(list2);
-            System.out.println("answer looks: ");
+            System.out.print("answer looks: ");
             printList(answer);
-            System.out.println("current looks: ");
+            System.out.print("current looks: ");
             printList(current);
             System.out.println("______________");
 
@@ -75,30 +73,35 @@ class MergeTwoSortedLists_21 {
                 list2 = list2.next;
             }
             current = current.next;
-
-            System.out.println("answer addr: " + answer);
-            System.out.println("current addr: " + current);
         }
 
+        System.out.println("AFTER WHILE");
         while (list1 != null) {
+            System.out.print("l1: ");
+            printList(list1);
+            System.out.print("answer looks: ");
+            printList(answer);
+            System.out.print("current looks: ");
+            printList(current);
+            System.out.println("______________");
             current.next = new ListNode(list1.val);
             list1 = list1.next;
         }
 
         while (list2 != null) {
+            System.out.print("l2: ");
+            printList(list2);
+            System.out.print("answer looks: ");
+            printList(answer);
+            System.out.print("current looks: ");
+            printList(current);
+            System.out.println("______________");
             current.next = new ListNode(list2.val);
             list2 = list2.next;
         }
 
         System.out.println("RESULT answer:");
         printList(answer);
-        int i = 0;
-        while (answer != null) {
-            System.out.println(i + "th node address: " + answer );
-            i++;
-            answer = answer.next;
-        }
-        System.out.println();
         System.out.println("RESULT current:");
         printList(current);
 
