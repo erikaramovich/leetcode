@@ -10,27 +10,23 @@ public class RemoveDuplicatesFromSortedArray_26 {
     }
 
     public static int removeDuplicates(int[] nums) {
-        if(nums.length == 1){
+        if (nums.length == 1) {
             return 1;
         }
 
-        int read = 1;
         int write = 1;
 
-        while(read < nums.length){
+        for (int read = 1; read < nums.length; read++) {
 //            System.out.println("Read: " + read + ", Write: " + write);
 //            System.out.println(Arrays.toString(nums));
 //            System.out.println("Current number: " + nums[read] + ", previous number: " + nums[write-1]);
-            if(nums[read] == nums[write-1])
-            {
-//                System.out.println("Duplicate found, skipping");
-            }
-            else {
+
+            // if the current element is not duplicated, we save it
+            if (nums[read] != nums[write - 1]) {
 //                System.out.println("Copying number to write position");
                 nums[write] = nums[read];
                 write++;
             }
-            read++;
         }
 
         System.out.println(Arrays.toString(nums));
